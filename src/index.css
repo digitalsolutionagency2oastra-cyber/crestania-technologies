@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #030303;
+    --surface: #090909;
+    --surface-elevated: #111111;
+    --border: rgba(255, 255, 255, 0.08);
+    --accent-red: #c40024;
+    --bright-red: #e0002a;
+    --neon-glow: rgba(196, 0, 36, 0.45);
+    --text: #f5f5f5;
+    --text-muted: #8e8e93;
+  }
+
+  html, body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Layered cinematic overlays */
+.cine-vignette {
+  background: radial-gradient(ellipse at center, rgba(3, 3, 3, 0.2) 0%, rgba(3, 3, 3, 0.72) 60%, rgba(0, 0, 0, 0.95) 100%);
+  pointer-events: none;
+}
+
+.cine-scan {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.32) 3px,
+    rgba(0, 0, 0, 0.32) 4px
+  );
+  pointer-events: none;
+}
+
+.cine-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  animation: grain-jitter 8s steps(10) infinite;
+}
+
+@keyframes grain-jitter {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -2%); }
+  20% { transform: translate(2%, 1%); }
+  30% { transform: translate(-1%, 2%); }
+  40% { transform: translate(2%, -1%); }
+  50% { transform: translate(-2%, 2%); }
+  60% { transform: translate(1%, -2%); }
+  70% { transform: translate(2%, 2%); }
+  80% { transform: translate(-2%, -1%); }
+  90% { transform: translate(1%, 2%); }
+}
+
+/* 3D Draggable and perspective rules */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c40024;
+}

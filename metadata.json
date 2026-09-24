@@ -1,0 +1,6 @@
+{
+  "name": "Astra — Cyberpunk Full-Stack & AI Engineer Portfolio",
+  "description": "Award-winning dark cyberpunk portfolio featuring an interactive cursor & scroll scrubbed 3D video engine, 3D draggable certification gallery, and high-impact editorial showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
